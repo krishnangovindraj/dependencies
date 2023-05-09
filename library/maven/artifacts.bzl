@@ -275,4 +275,6 @@ artifacts = {
     "org.yaml:snakeyaml": "1.25",
     "org.zeromq:jeromq": "0.5.2",
     "org.zeroturnaround:zt-exec": "1.10",
+
+    "io.github.speedb-io:speedbjni": "2.4.1",
 }
