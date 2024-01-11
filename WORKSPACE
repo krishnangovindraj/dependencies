@@ -20,6 +20,13 @@ workspace(name = "vaticle_dependencies")
 ################################
 # Load @vaticle_dependencies #
 ################################
+# Load //builder/cpp
+load("//builder/cpp:deps.bzl", cpp_deps = "deps")
+cpp_deps()
+
+# Load //builder/dotnet
+load("//builder/dotnet:deps.bzl", dotnet_deps = "deps")
+dotnet_deps()
 
 # Load //builder/rust
 load("//builder/rust:deps.bzl", rust_deps = "deps")
