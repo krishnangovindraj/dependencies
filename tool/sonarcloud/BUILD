@@ -13,7 +13,7 @@ py_binary(
     data = select({
         "@vaticle_bazel_distribution//platform:is_linux" : [ "@sonarscanner_linux_zip//file" ],
         "@vaticle_bazel_distribution//platform:is_mac" : [ "@sonarscanner_mac_zip//file" ],
-        "//conditions:default" : [ "@sonarscanner_zip//file" ]
+        "//conditions:default" : [ "@sonarscanner_any_zip//file" ]
     })
 )
 
