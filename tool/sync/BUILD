@@ -19,6 +19,8 @@ py_binary(
         requirement("idna"),
         requirement("wrapt"),
         requirement("certifi"),
+        requirement("cffi"),
+        requirement("pycparser"),
     ],
 )
 

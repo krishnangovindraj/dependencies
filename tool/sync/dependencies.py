@@ -10,6 +10,8 @@ Example usage:
 bazel run @vaticle_dependencies//tool/sync:dependencies -- --source typedb-driver@1a2b3c4d1a2b3c4d1a2b3c4d1a2b3c4d1a2b3c4g
 """
 
+
+
 import argparse
 import tool.common.common as tc
 import github
@@ -20,6 +22,9 @@ import os
 import re
 import subprocess as sp
 import sys
+
+import sys
+print("PYTHON VERSION IS: ", sys.executable)
 
 IS_CIRCLECI = bool(os.getenv('CIRCLECI'))
 IS_FACTORY = bool(os.getenv('FACTORY_REPO'))
