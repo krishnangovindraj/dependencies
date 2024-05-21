@@ -11,6 +11,8 @@ bazel run @vaticle_dependencies//tool/sync:dependencies -- --source typedb-drive
 """
 
 
+import sys
+print("PYTHON VERSION IS: ", sys.executable)
 
 import argparse
 import tool.common.common as tc
@@ -23,8 +25,6 @@ import re
 import subprocess as sp
 import sys
 
-import sys
-print("PYTHON VERSION IS: ", sys.executable)
 
 IS_CIRCLECI = bool(os.getenv('CIRCLECI'))
 IS_FACTORY = bool(os.getenv('FACTORY_REPO'))
