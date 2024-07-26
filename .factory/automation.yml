@@ -21,7 +21,7 @@ build:
     sync-dependencies:
       image: vaticle-ubuntu-22.04
       filter:
-        owner: vaticle
+        owner: typedb
         branch: [master, development]
       dependencies: [build]
       command: |
