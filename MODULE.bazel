@@ -179,6 +179,21 @@ crate.from_cargo(
         "x86_64-pc-windows-msvc",
         "x86_64-unknown-linux-gnu",
     ],
+    generator_urls = {
+        "x86_64-unknown-linux-gnu": "https://repo.typedb.com/public/public-tools/raw/versions/0.0.0/cargo-bazel-linux-x86_64",
+        "aarch64-unknown-linux-gnu": "https://repo.typedb.com/public/public-tools/raw/versions/0.0.0/cargo-bazel-linux-arm64",
+        "x86_64-apple-darwin": "https://repo.typedb.com/public/public-tools/raw/versions/0.0.0/cargo-bazel-mac-x86_64",
+        "aarch64-apple-darwin": "https://repo.typedb.com/public/public-tools/raw/versions/0.0.0/cargo-bazel-mac-arm64",
+        "x86_64-pc-windows-msvc": "https://repo.typedb.com/public/public-tools/raw/versions/0.0.0/cargo-bazel-win-x86_64.exe",
+    },
+
+    generator_sha256s = {
+        "x86_64-unknown-linux-gnu": "5ae8c4d39ea3762535acd25e6d372365d1ae64d8faa6e9c2e0d06d35a7470bc1",
+        "aarch64-unknown-linux-gnu": "9855b2963a0f9978ed1000a9f8ce5ebc2e14402bf69485656173dc9c047eb675",
+        "x86_64-apple-darwin": "055017df3b1f4b5359b2c888b3354afd2f7b53741f6dd1c8338aa5de62f04e31",
+        "aarch64-apple-darwin": "22ed6a2113e59cd5977ac0b8275dba12809b4bb382a01589eb09981e78a6bb06",
+        "x86_64-pc-windows-msvc": "238e01c1bc97ce2671dddaa7435e56ebffcbbc43f5d6fb3f3d18f6afad148fbf",
+    },
 )
 crate.annotation(
     crate = "cbindgen",
