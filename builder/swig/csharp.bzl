@@ -2,7 +2,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
-
+load("@rules_dotnet//dotnet/private/transitions:default_transition.bzl", "default_transition")
 load("@rules_dotnet//dotnet:defs.bzl", "csharp_library")
 load("@rules_dotnet//dotnet/private:providers.bzl", "DotnetAssemblyCompileInfo", "DotnetAssemblyRuntimeInfo")
 
@@ -168,6 +168,7 @@ csharp_native_library = rule(
             providers = [CcInfo],
             mandatory = True,
             allow_single_file = True,
+            cfg = default_transition, # Prevents dotnet specific config from changing build settings of native library.
         ),
     },
 )
