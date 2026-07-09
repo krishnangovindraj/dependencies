@@ -2,6 +2,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
+load("@rules_dotnet//dotnet/private/transitions:default_transition.bzl", "default_transition")
 
 def _copy_to_bin(ctx, src, dst):
     ctx.actions.run_shell(
@@ -164,6 +165,7 @@ _swig_java_wrapper = rule(
             cfg = "exec",
         ),
     },
+    cfg = default_transition,
 )
 
 

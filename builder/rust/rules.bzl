@@ -7,7 +7,6 @@ load("@bazel_skylib//rules:run_binary.bzl", "run_binary")
 load("@rules_cc//cc:defs.bzl", "cc_library")
 load("@typedb_dependencies//builder/rust/cargo:project_aspect.bzl", "CargoProjectInfo", "rust_cargo_project_aspect")
 load("@rules_rust//rust/private:providers.bzl", "DepInfo")
-load("@rules_dotnet//dotnet/private/transitions:default_transition.bzl", "default_transition")
 
 def rust_cxx_bridge(name, src, deps = []):
     run_binary(
@@ -140,10 +139,9 @@ rust_cbindgen = rule(
             allow_single_file = True,
             executable = True,
             cfg = "exec",
-        ),
+        )
     },
     toolchains = [
         "@rules_rust//rust:toolchain",
     ],
-    cfg = default_transition,
 )

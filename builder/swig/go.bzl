@@ -3,6 +3,7 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 load("@io_bazel_rules_go//go:def.bzl", "go_library")
+load("@rules_dotnet//dotnet/private/transitions:default_transition.bzl", "default_transition")
 
 def _swig_go_wrapper_impl(ctx):
     module_name = ctx.attr.name
@@ -105,6 +106,7 @@ _swig_go_wrapper = rule(
             cfg = "exec",
         ),
     },
+    cfg = default_transition,
 )
 
 def swig_go(name, lib, package_name, shared_lib_name=None, tags=[], **kwargs):

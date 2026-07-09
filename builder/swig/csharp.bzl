@@ -4,7 +4,7 @@
 
 load("@rules_dotnet//dotnet:defs.bzl", "csharp_library")
 load("@rules_dotnet//dotnet/private:providers.bzl", "DotnetAssemblyCompileInfo", "DotnetAssemblyRuntimeInfo")
-
+load("@rules_dotnet//dotnet/private/transitions:default_transition.bzl", "default_transition")
 
 def _swig_csharp_wrapper_impl(ctx):
     module_name = getattr(ctx.attr, "class_name", ctx.attr.name)
@@ -130,6 +130,7 @@ swig_csharp_wrapper = rule(
             doc = "SWIG library files (.i, .swg)",
         ),
     },
+    cfg = default_transition,
 )
 
 
