@@ -1,6 +1,6 @@
 # Amazon Linux 2 Images for TypeDB CI
 
-These images are prepared for building TypeDB 3.x.
+These images are prepared for building TypeDB 3.x. The requirements for running deployment & assembly tests may not be included.
 Images are prepared for two base architectures: `arm64` and `amd64`. Images are tagged based on the current `VERSION` and Git commit SHA.
 
 ## Usage

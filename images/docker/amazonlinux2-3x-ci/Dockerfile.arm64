@@ -3,6 +3,17 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 FROM amazonlinux@sha256:d0cda3bbfec752b73e46311d3c6ab9ee3ebd545d85bd01a4f04a7bdeb29c682a
-RUN amazon-linux-extras install python3.8 -y && ln -s /usr/bin/python3.8 /usr/bin/python3
-RUN yum install wget make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel file lsof which procps tar git -y
+RUN yum install wget make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libicu60 file lsof which procps tar git -y
+RUN <<-EOF
+    pushd /tmp
+    wget https://www.python.org/ftp/python/3.9.6/Python-3.9.6.tgz
+    tar -xvf Python-3.9.6.tgz
+    cd Python-3.9.6
+    ./configure --enable-optimizations --enable-shared
+    make altinstall
+    echo "/usr/local/lib" >> /etc/ld.so.conf.d/python3.9.conf
+    ldconfig
+    ln -s /usr/local/bin/python3.9 /usr/bin/python3
+    popd
+EOF
 RUN curl -OL "https://github.com/bazelbuild/bazelisk/releases/download/v1.17.0/bazelisk-linux-arm64" && mv "bazelisk-linux-arm64" /usr/local/bin/bazel && chmod a+x /usr/local/bin/bazel
